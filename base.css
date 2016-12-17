@@ -1,0 +1,62 @@
+/*基本样式*/
+/*01-样式重置*/
+*,::before,::after{
+    margin: 0;
+    padding: 0;
+    /*采用盒子内减模式*/
+    box-sizing: border-box;
+    /*兼容webket*/
+    -webkit-box-sizing: border-box;
+    /*去除移动端点击高亮*/
+    -webkit-tap-highlight-color: transparent;
+}
+body{
+    font-size: 14px;
+    font-family: "Microsoft YaHei", "微软雅黑", Tahoma, Helvetica;
+    color: #333;
+}
+a{
+    text-decoration: none;
+    color: #333;
+}
+a:hover{
+    text-decoration: none;
+}
+ul,ol{
+    list-style: none;
+}
+input{
+    outline: none;
+    border: none;
+    /*去除表单在移动设备上的阴影3D效果*/
+    -webkit-appearance: none;
+}
+
+/*02-公共样式*/
+.clearfix:before,
+.clearfix:after{
+    content: "";
+    height: 0;
+    visibility: hidden;
+    line-height: 0;
+    display: block;
+    clear: both;
+}
+.pull-left{
+    float: left;
+}
+.pull-right{
+    float: right;
+}
+.b-l{
+    border-left:1px solid #ccc ;
+}
+.b-r{
+    border-right:1px solid #ccc ;
+}
+.b-t{
+    border-top:1px solid #ccc ;
+}
+.b-b{
+    border-bottom: 1px solid #ccc;
+}
