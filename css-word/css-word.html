@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width; initial-scale=1.0; maximum-scale=1; user-scalable=no;viewport-fit=cover"/>
+    <meta name="renderer" content="webkit|ie-comp|ie-stand"/>
+    <title>Title</title>
+</head>
+<body>
+<style>
+    body{
+        background-color: #e4ffff;
+    }
+    .word-item{
+        text-decoration: underline;
+        text-underline-offset: 7px;
+        margin-bottom: 15px;
+        color: #0062f8;
+        text-underline-color: #0062f8;
+        text-decoration-style: dotted;
+    }
+    body img{
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 30px;
+        height: 30px;
+    }
+    body img.animation{
+        animation: fadenum 10s infinite;
+    }
+    @keyframes fadenum{
+        100% {transform: rotate(360deg)}
+    }
+     .main{
+         width: 600px;
+         height: 300px;
+         margin: 100px auto;
+         background-color: white;
+         position: relative;
+     }
+    .boy, .girl{
+        position: relative;
+    }
+    .boy .head, .girl .head{
+        width: 100px;
+        height: 100px;
+        border-radius: 100% 100% 85% 92% / 100% 97% 90% 98% ;
+        border: 3px solid black;
+        position: relative;
+        transform: rotate(-20deg);
+        overflow: hidden;
+    }
+    .girl .head{
+        width: 90px;
+        height: 90px;
+        left: 320px;
+        top: -100px;
+        transform: rotate(0deg);
+    }
+
+    .boy .head .left_eye, .boy .head .right_eye{
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        font-size: 25px;
+        font-weight: bold;
+    }
+    .boy .head .right_eye{
+        left: 75px;
+    }
+    .girl .head .left_eye, .girl .head .right_eye{
+        position: absolute;
+        top: 20px;
+        left: 15px;
+        font-size: 25px;
+        font-weight: bold;
+    }
+    .girl .head .right_eye{
+        left: 60px;
+    }
+
+    .boy .left_blusher, .boy .right_blusher,
+    .girl .left_blusher, .girl .right_blusher{
+        width: 20px ;
+        height: 15px;
+        background-color: pink;
+        border-radius: 50% / 50%;
+        position: absolute;
+        top: 60px;
+        left: 10px;
+    }
+    .boy .right_blusher{
+        top: 60px;
+        left: 85px;
+    }
+    .girl .left_blusher{
+        top: 50px;
+        left: 5px;
+    }
+    .girl .right_blusher{
+        top: 50px;
+        left: 68px;
+    }
+    .boy .mouth, .girl .mouth{
+        position: absolute;
+        top: 60px;
+        left: 56px;
+        width: 15px;
+        height: 20px;
+        overflow: hidden;
+    }
+    .girl .mouth{
+        left: 40px;
+        top: 56px;
+    }
+    .boy .mouth .circle, .girl .mouth .circle{
+        margin-top: -12px;
+        width: 10px;
+        height: 20px;
+        border-radius: 50% / 50%;
+        border: 2px solid black;
+    }
+    .girl .mouth .circle{
+        margin-top: -10px;
+        width: 7px;
+        margin-left: 2px;
+    }
+    .body, .left_foot{
+        width: 2.5px;
+        height: 60px;
+        background-color: black;
+        position: absolute;
+        left: 60px;
+    }
+    .hand1, .hand2{
+        width: 50px;
+        height: 2.5px;
+        background-color: black;
+        position: absolute;
+        top: 120px;
+        left: 62px;
+    }
+    .hand2{
+        top: 136px;
+    }
+    .left_hand, .right_hand{
+        width: 2.5px;
+        height: 20px;
+        background-color: black;
+        position: absolute;
+        top: 102px;
+        left: 110px;
+    }
+    .right_hand{
+        top: 136px;
+    }
+    .left_foot{
+        height: 50px;
+        top: 155px;
+        left: 42px;
+        transform: rotate(50deg);
+    }
+    .right_foot1{
+        width: 30px;
+        height: 2.5px;
+        background-color: black;
+        position: absolute;
+        top: 166px;
+        left: 60px;
+        transform: rotate(15deg);
+    }
+    .right_foot2{
+        width: 2.5px;
+        height: 26px;
+        background-color: black;
+        position: absolute;
+        top: 170px;
+        left: 88px;
+    }
+
+    .body1, .body2{
+        position: absolute;
+        top: 140px;
+        left: 280px;
+        width: 100px;
+        height: 2.5px;
+        background-color: black;
+        transform: rotate(-55deg);
+    }
+    .body2{
+        left: 360px;
+        transform: rotate(55deg);
+    }
+    .girl_left_hand, .girl_right_hand{
+        position: absolute;
+        top: 140px;
+        left: 330px;
+        font-size: 30px;
+        transform: rotate(12deg);
+    }
+    .girl_right_hand{
+        left: 380px;
+        transform: rotate(-12deg);
+    }
+    .love{
+        position: absolute;
+        top: 0px;
+        left: 150px;
+        width: 80px;
+        display: flex;
+        /* background-color: aqua; */
+        justify-content: center;
+        align-items: center;
+        margin: 100px auto;
+    }
+    .one, .two{
+        width: 30px;
+        height: 50px;
+        background: #f6426a;
+        border-radius: 45px 45px 0px 0px;
+        transform: rotate(-45deg);
+    }
+    .two{
+        margin-left: -15px;
+        transform: rotate(45deg);
+    }
+    .boy, .love, .girl-out{
+        display: none;
+    }
+</style>
+<div class="footer">
+    <div id="boy" class="boy">
+        <div class="head">
+            <div class="left_eye">></div>
+            <div class="right_eye"><</div>
+            <div class="left_blusher"></div>
+            <div class="right_blusher"></div>
+            <div class="mouth"><div class="circle"></div></div>
+        </div>
+        <div class="body"></div>
+        <div class="hand1"></div>
+        <div class="hand2"></div>
+        <div class="left_hand"></div>
+        <div class="right_hand"></div>
+        <div class="left_foot"></div>
+        <div class="right_foot1"></div>
+        <div class="right_foot2"></div>
+    </div>
+    <div id="love" class="love">
+        <div class="one"></div>
+        <div class="two"></div>
+    </div>
+    <div id="girl-out" class="girl-out">
+        <div class="girl">
+            <div class="head">
+                <div class="left_eye">></div>
+                <div class="right_eye"><</div>
+                <div class="left_blusher"></div>
+                <div class="right_blusher"></div>
+                <div class="mouth"><div class="circle"></div></div>
+            </div>
+        </div>
+        <div class="body1"></div>
+        <div class="body2"></div>
+        <div class="girl_left_hand">></div>
+        <div class="girl_right_hand"><</div>
+    </div>
+</div>
+<div id="body"></div>
+<img id="img" src="./assets/voice-rotate.svg"
+     onclick="document.getElementById('audio').play();document.getElementById('img').className = 'animation'">
+<audio id="audio" src="./assets/qing.mp3" autoplay></audio>
+<script>
+   window.onload = function () {
+       let words = [
+           '* 你好，嘉熠，很高兴认识你～',
+           '* 或者说，认识你，我觉得我是幸运的',
+           '* 在我看来，你是个超级爱笑的女孩',
+           '* 听到你的笑声，总让我想起你嘴角上扬的样子',
+           '* 不禁也让我开始傻乐',
+           '* 感觉好久没有这么开心过了',
+           '* 你总是在不经意间就开始夸我',
+           '* 让我无时无刻不想陪你聊天',
+           '* 后知后觉的我发现',
+           '* 也许这就是喜欢',
+           '* 也许这就是心动',
+           '* 也许太久没有谈恋爱了',
+           '* 经常被你说表达能力好的我，偶尔也开始结巴',
+           '* 但请相信，我一定努力改善',
+           '* 最后的最后',
+           '* 我想说我会努力爱你哒～',
+       ]
+       function showText(str){
+           let showElDom = document.createElement('div')
+           showElDom.className = 'word-item'
+           let strArr = str.trim().split("");
+           let newStr = '';
+           let len = strArr.length;
+           let number = 0;
+           let timer = setInterval(() => {
+               if (number > len-1) {
+                   clearInterval(timer);
+                   return;
+               }
+               newStr += strArr[number];
+               showElDom.innerText = newStr;
+               number++;
+               document.getElementById('body').append(showElDom);
+           }, 100);
+       }
+       let time = 0
+       words.forEach((item,index)=>{
+           setTimeout(()=>{
+               showText(item)
+           },time * 100)
+           time += item.length;
+       })
+       setTimeout(()=>{
+           document.getElementById('boy').style.display = 'block'
+       },time * 100 + 1000)
+       setTimeout(()=>{
+           document.getElementById('love').style.display = 'flex'
+       },time * 100 + 2500)
+       setTimeout(()=>{
+           document.getElementById('girl-out').style.display = 'block'
+       },time * 100 + 5000)
+   }
+</script>
+</body>
+</html>
